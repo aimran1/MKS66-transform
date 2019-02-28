@@ -18,13 +18,17 @@ def make_scale( x, y, z ):
     return s
 
 def make_rotX( theta ):
+
     pass
 
 def make_rotY( theta ):
     pass
 
 def make_rotZ( theta ):
-    pass
+    C = math.cos(math.radians(theta))
+    S = math.sin(math.radians(theta))
+    rZ = [[C,-1*S,0,0],[S,C,0,0],[0,0,1,0],[0,0,0,1]]
+    return rZ
 
 #print the matrix such that it looks like
 #the template in the top comment
