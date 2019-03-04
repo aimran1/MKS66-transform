@@ -33,4 +33,6 @@ The file follows the following format:
 See the file script for an example of the file format
 """
 def parse_file( fname, points, transform, screen, color ):
-    pass
+    f = open(fname,"r")
+    file = f.read().split("\n")
+    print(file)
