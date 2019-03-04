@@ -47,9 +47,19 @@ def parse_file( fname, points, transform, screen, color ):
             matrix_mult(make_scale(int(p[0]),int(p[1]),int(p[2])),transform)
             i+=1
         elif file[i] == "move":
-            pass
+            p = file[i+1].split(" ")
+            matrix_mult(make_translate(int(p[0]),int(p[1]),int(p[2])),transform)
+            i+=1
         elif file[i] == "rotate":
-            pass
+            p = file[i+1].split(" ")
+            if p[0] == "x":
+                r = make_rotX(float(p[1]))
+            elif p[0] == "y":
+                r = make_rotY(float(p[1]))
+            elif p[0] == "z":
+                r = make_rotZ(float(p[1]))
+            matrix_mult(r,transform)
+            i+=1
         elif file[i] == "apply":
             matrix_mult(transform, points)
         elif file[i] == "display":
@@ -57,4 +67,7 @@ def parse_file( fname, points, transform, screen, color ):
             draw_lines(points,screen,color)
             display(screen)
         elif file[i] == "save":
-            pass
+            clear_screen(screen)
+            draw_lines(points,screen,color)
+            save_extension(screen,file[i+1])
+            i+=1

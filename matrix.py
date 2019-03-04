@@ -18,20 +18,20 @@ def make_scale( x, y, z ):
     return s
 
 def make_rotX( theta ):
-    C = math.cos(math.radians(theta))
-    S = math.sin(math.radians(theta))
+    C = int(math.cos(math.radians(theta)))
+    S = int(math.sin(math.radians(theta)))
     rX = [[1,0,0,0],[0,C,-1*S,0],[0,S,C,0],[0,0,0,1]]
     return rX
 
 def make_rotY( theta ):
-    C = math.cos(math.radians(theta))
-    S = math.sin(math.radians(theta))
+    C = int(math.cos(math.radians(theta)))
+    S = int(math.sin(math.radians(theta)))
     rY = [[C,0,S,0],[0,1,0,0],[-1*S,0,C,0],[0,0,0,1]]
     return rY
 
 def make_rotZ( theta ):
-    C = math.cos(math.radians(theta))
-    S = math.sin(math.radians(theta))
+    C = int(math.cos(math.radians(theta)))
+    S = int(math.sin(math.radians(theta)))
     rZ = [[C,-1*S,0,0],[S,C,0,0],[0,0,1,0],[0,0,0,1]]
     return rZ
 
