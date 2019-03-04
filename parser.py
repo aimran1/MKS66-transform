@@ -35,4 +35,20 @@ See the file script for an example of the file format
 def parse_file( fname, points, transform, screen, color ):
     f = open(fname,"r")
     file = f.read().split("\n")
-    print(file)
+    for i in range(len(file)):
+        if file[i] == "line":
+            pass
+        elif file[i] == "ident":
+            pass
+        elif file[i] == "scale":
+            pass
+        elif file[i] == "move":
+            pass
+        elif file[i] == "rotate":
+            pass
+        elif file[i] == "apply":
+            pass
+        elif file[i] == "display":
+            pass
+        elif file[i] == "save":
+            pass
