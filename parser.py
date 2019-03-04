@@ -40,16 +40,18 @@ def parse_file( fname, points, transform, screen, color ):
             p = file[i+1].split(" ")
             add_edge(points,int(p[0]),int(p[1]),int(p[2]),int(p[3]),int(p[4]),int(p[5]))
             i+=1
-        elif file[i] == "ident":            
+        elif file[i] == "ident":
             ident(transform)
         elif file[i] == "scale":
-            pass
+            p = file[i+1].split(" ")
+            matrix_mult(make_scale(float(p[0]),float(p[1]),float(p[2])),transform)
+            i+=1
         elif file[i] == "move":
             pass
         elif file[i] == "rotate":
             pass
         elif file[i] == "apply":
-            pass
+            matrix_mult(transform, points)
         elif file[i] == "display":
             clear_screen(screen)
             draw_lines(points,screen,color)
