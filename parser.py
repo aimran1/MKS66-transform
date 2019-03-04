@@ -37,7 +37,9 @@ def parse_file( fname, points, transform, screen, color ):
     file = f.read().split("\n")
     for i in range(len(file)):
         if file[i] == "line":
-            pass
+            p = file[i+1].split(" ")
+            add_edge(points,p[0],p[1],p[2],p[3],p[4],p[5])
+            i+=2
         elif file[i] == "ident":
             pass
         elif file[i] == "scale":
