@@ -44,7 +44,7 @@ def parse_file( fname, points, transform, screen, color ):
             ident(transform)
         elif file[i] == "scale":
             p = file[i+1].split(" ")
-            matrix_mult(make_scale(float(p[0]),float(p[1]),float(p[2])),transform)
+            matrix_mult(make_scale(int(p[0]),int(p[1]),int(p[2])),transform)
             i+=1
         elif file[i] == "move":
             pass
