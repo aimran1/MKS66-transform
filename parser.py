@@ -40,8 +40,8 @@ def parse_file( fname, points, transform, screen, color ):
             p = file[i+1].split(" ")
             add_edge(points,int(p[0]),int(p[1]),int(p[2]),int(p[3]),int(p[4]),int(p[5]))
             i+=1
-        elif file[i] == "ident":
-            pass
+        elif file[i] == "ident":            
+            ident(transform)
         elif file[i] == "scale":
             pass
         elif file[i] == "move":
