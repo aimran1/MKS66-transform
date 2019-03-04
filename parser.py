@@ -38,8 +38,8 @@ def parse_file( fname, points, transform, screen, color ):
     for i in range(len(file)):
         if file[i] == "line":
             p = file[i+1].split(" ")
-            add_edge(points,p[0],p[1],p[2],p[3],p[4],p[5])
-            i+=2
+            add_edge(points,int(p[0]),int(p[1]),int(p[2]),int(p[3]),int(p[4]),int(p[5]))
+            i+=1
         elif file[i] == "ident":
             pass
         elif file[i] == "scale":
@@ -51,6 +51,8 @@ def parse_file( fname, points, transform, screen, color ):
         elif file[i] == "apply":
             pass
         elif file[i] == "display":
-            pass
+            clear_screen(screen)
+            draw_lines(points,screen,color)
+            display(screen)
         elif file[i] == "save":
             pass
