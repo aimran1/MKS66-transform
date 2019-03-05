@@ -18,21 +18,21 @@ def make_scale( x, y, z ):
     return s
 
 def make_rotX( theta ):
-    C = int(math.cos(math.radians(theta)))
-    S = int(math.sin(math.radians(theta)))
-    rX = [[1,0,0,0],[0,C,-1*S,0],[0,S,C,0],[0,0,0,1]]
+    C = math.cos(math.radians(theta))
+    S = math.sin(math.radians(theta))
+    rX = [[1,0,0,0],[0,(C),(S),0],[0,(-1*S),(C),0],[0,0,0,1]]
     return rX
 
 def make_rotY( theta ):
-    C = int(math.cos(math.radians(theta)))
-    S = int(math.sin(math.radians(theta)))
-    rY = [[C,0,S,0],[0,1,0,0],[-1*S,0,C,0],[0,0,0,1]]
+    C = math.cos(math.radians(theta))
+    S = math.sin(math.radians(theta))
+    rY = [[(C),0,(-1*S),0],[0,1,0,0],[(S),0,(C),0],[0,0,0,1]]
     return rY
 
 def make_rotZ( theta ):
-    C = int(math.cos(math.radians(theta)))
-    S = int(math.sin(math.radians(theta)))
-    rZ = [[C,-1*S,0,0],[S,C,0,0],[0,0,1,0],[0,0,0,1]]
+    C = math.cos(math.radians(theta))
+    S = math.sin(math.radians(theta))
+    rZ = [[(C),(S),0,0],[(-1*S),(C),0,0],[0,0,1,0],[0,0,0,1]]
     return rZ
 
 #print the matrix such that it looks like
@@ -43,7 +43,7 @@ def print_matrix( matrix ):
         for c in range( len(matrix) ):
             s+= str(matrix[c][r]) + ' '
         s+= '\n'
-    print s
+    print(s)
 
 #turn the paramter matrix into an identity matrix
 #you may assume matrix is square
